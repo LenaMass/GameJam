@@ -26,16 +26,10 @@ public class PlayerMovment : MonoBehaviour
 
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
-<<<<<<< Updated upstream
         // movementDirection.Normalize();
         movementDirection = transform.TransformDirection(movementDirection);
 
          ySpeed += Physics.gravity.y * Time.deltaTime;     
-=======
-        movementDirection.Normalize();
-
-        ySpeed += Physics.gravity.y * Time.deltaTime;     
->>>>>>> Stashed changes
 
         Vector3 velocity = movementDirection * magnitude;
         velocity.y = ySpeed;
