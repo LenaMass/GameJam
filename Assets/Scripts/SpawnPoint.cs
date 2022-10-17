@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private Vector3 TheSpawnPoint;
-    [SerializeField] private GameObject player;
-    private Rigidbody rb;
+    private Transform spawnPoint;
+    private Transform playerPos;
+    
 
     private void Start()
     {
-        rb = player.GetComponent<Rigidbody>();
-
+       playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+       spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,8 +19,7 @@ public class SpawnPoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Entered Trigger");
-            other.transform.position = TheSpawnPoint;
-
+            playerPos.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
         }
 
 
