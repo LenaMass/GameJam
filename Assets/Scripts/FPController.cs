@@ -7,6 +7,8 @@ public class FPController : MonoBehaviour
     // Camera Variables
     [SerializeField] private Transform cameraTarget;
     private Camera mainCamera;
+    public SoundManager sm;
+
 
 
     private float verticalRotationLimit;
@@ -52,15 +54,21 @@ public class FPController : MonoBehaviour
         cameraTarget.rotation = Quaternion.Euler(verticalRotationLimit, cameraTarget.eulerAngles.y, cameraTarget.eulerAngles.z);
 
         //User input for moving 
-        Vector3 moveForward = transform.forward * Input.GetAxisRaw("Vertical");
-        Vector3 moveRight = transform.right * Input.GetAxisRaw("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        if (movementDirection != Vector3.zero)
+        {
+
+            sm.PlayPlayerStep();
+        }
         //set movement speed based on if the player is holding down left shift
         float currentSpeed = (Input.GetKey(KeyCode.LeftShift)) ? RunSpeed : WalkSpeed;
 
 
         // Generate movement 
-        movement = (moveForward + moveRight).normalized * currentSpeed;
+        movement = (movementDirection).normalized * currentSpeed;
         charController.Move(movement * Time.deltaTime);
 
     }
