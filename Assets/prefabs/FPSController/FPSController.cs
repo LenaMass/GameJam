@@ -75,7 +75,7 @@ public class FPSController : MonoBehaviour
         movement = (moveForward + moveRight).normalized;
         movement *= currentSpeed;
         movement.y = yVelocity;
-        sm.PlayPlayerStep();
+       // sm.PlayPlayerStep();
 
 
         //check if Character Controller is grounded
