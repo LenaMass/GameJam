@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 	
    public AudioSource audioSource;
 
-   public AudioClip playerJump, coinCollect, winSound;
+   public AudioClip steps , solvepuzzle, opendoor, press , press2 ;
 
 
     private void Start()
@@ -16,19 +16,26 @@ public class SoundManager : MonoBehaviour
       audioSource = GetComponent<AudioSource>();
 	}
     
-	public void PlayPlayerJump()
+	public void PlayPlayerStep()
 	{
-    audioSource.PlayOneShot(playerJump);
+    audioSource.PlayOneShot(steps);
 	}
 	
-    public void PlayCoinCollect()
+    public void PlaySolvePuzzle()
 	{
-    audioSource.PlayOneShot(coinCollect);
+    audioSource.PlayOneShot(solvepuzzle);
 	}
-    public void PlayWinSound()
+    public void PlayOpenDoor()
 	{
-    audioSource.PlayOneShot(winSound);
+    audioSource.PlayOneShot(opendoor);
+	}
+	public void PlayPreeskey1()
+	{
+		audioSource.PlayOneShot(press);
 	}
 
-
+	public void PlayPreeskey2()
+	{
+		audioSource.PlayOneShot(press2);
+	}
 }
