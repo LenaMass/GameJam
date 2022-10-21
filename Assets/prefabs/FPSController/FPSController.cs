@@ -67,8 +67,8 @@ public class FPSController : MonoBehaviour
         Vector3 moveForward = transform.forward * Input.GetAxisRaw("Vertical");
         Vector3 moveRight = transform.right * Input.GetAxisRaw("Horizontal");
 
-        //set movement speed based on if the player is holding down left shift
-        float currentSpeed = (Input.GetKey(KeyCode.LeftShift)) ? runSpeed : moveSpeed;
+            //set movement speed based on if the player is holding down left shift
+            float currentSpeed = (Input.GetKey(KeyCode.LeftShift)) ? runSpeed : moveSpeed;
 
         //jump check
         float yVelocity = movement.y;
