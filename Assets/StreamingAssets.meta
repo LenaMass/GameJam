@@ -1,7 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/StreamingAssets.meta
 guid: a27a4701b42ae8442b75592d2885837e
 folderAsset: yes
 DefaultImporter:
+========
+guid: 76a013aad67366d4fae76bac79103faf
+PrefabImporter:
+>>>>>>>> main:Assets/prefabs/Prefab/ss.prefab.meta
+=======
+guid: 0e935555f91fb43439bf0befc61adcb0
+folderAsset: yes
+DefaultImporter:
+>>>>>>> main
   externalObjects: {}
   userData: 
   assetBundleName: 

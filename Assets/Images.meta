@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Images.meta
 guid: 3f8c578f24ab5154fbe7f28bcc455f78
 folderAsset: yes
+========
+guid: 85a57e9b1a5c43e45afca387c42087b5
+>>>>>>>> main:Assets/Scenes/Scientist  Room.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

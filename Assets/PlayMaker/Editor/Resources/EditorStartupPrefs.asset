@@ -16,5 +16,9 @@ MonoBehaviour:
   playmakerVersion: 
   showWelcomeScreen: 1
   showUpgradeGuide: 0
+<<<<<<< HEAD
   lastAutoUpdateSignature: 2021.3.6f1__C:/Users/user/Documents/GitHub/GameJam/Assets__0.0.0.0
+=======
+  lastAutoUpdateSignature: 2021.3.6f1__C:/Users/droon/OneDrive/Documents/GameJam/Assets__0.0.0.0
+>>>>>>> main
   useLegacyNetworking: 0
