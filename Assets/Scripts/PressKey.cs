@@ -7,8 +7,6 @@ public class PressKey : MonoBehaviour
     public GameObject Text;
     public GameObject AnimObject;
     public GameObject Trigger;
-    public SoundManager sm;
-
     public bool open = false; 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +37,8 @@ public class PressKey : MonoBehaviour
                 Text.SetActive(false);
                 AnimObject.GetComponent<Animator>().Play("KitchenDoor");
                 Trigger.SetActive(false);
-                sm.PlayPreeskey2();
 
-
-    open = false;
+                open = false;
             }
         }
     }
