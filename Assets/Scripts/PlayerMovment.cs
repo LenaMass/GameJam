@@ -11,6 +11,8 @@ public class PlayerMovment : MonoBehaviour
     private CharacterController characterController;
     private float ySpeed;
     private float originalStepOffset;
+    public SoundManager sm;
+
 
 
     void Start()
@@ -39,9 +41,13 @@ public class PlayerMovment : MonoBehaviour
         if (movementDirection != Vector3.zero)
         {
             animator.SetBool("IsMoving", true);
+            sm.PlayPlayerStep();
+
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            sm.PlayPlayerStep();
+
         }
         else
         {
