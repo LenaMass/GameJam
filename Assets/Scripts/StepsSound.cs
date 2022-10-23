@@ -5,7 +5,6 @@ using UnityEngine;
 public class StepsSound : MonoBehaviour
 {
     public AudioSource FootSteps;
-
     void Start()
     {
         
@@ -14,7 +13,11 @@ public class StepsSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+      //  if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+      if(horizontalInput >0 || verticalInput>0)
         {
             FootSteps.enabled = true;
         }
