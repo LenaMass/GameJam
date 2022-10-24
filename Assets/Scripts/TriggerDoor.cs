@@ -7,7 +7,7 @@ public class TriggerDoor : MonoBehaviour
 {
     //private Animator _animator;
 
-    [SerializeField] private Animator DoorAnim;
+    [SerializeField] private Animator Anim;
     //[SerializeField] private Animator DoorAnim2;
      public SoundManager sm;
 
@@ -23,8 +23,8 @@ public class TriggerDoor : MonoBehaviour
         {
 
             //other.gameObject.GetComponent<PlayerMovement>().key--;
-            sm.PlayOpenDoor();
-            other.GetComponent<Animator>().SetTrigger("IsOpenning");
+            sm.PlayShelfmovement();
+            this.GetComponent<Animator>().SetTrigger("IsOpenning");
             // DoorAnim.SetTrigger("IsOpenning2");
             // DoorAnim.SetInteger("CollectKeys",2) ;
         }
