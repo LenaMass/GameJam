@@ -5,6 +5,13 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour {
   [SerializeField] private Transform gameTransform;
   [SerializeField] private Transform piecePrefab;
+  private CameraSwitch cameraSwitchScript;
+  [SerializeField] private GameObject Cam;
+  [SerializeField] private GameObject PuzzleBoard;
+
+
+
+
 
   private List<Transform> pieces;
   private int emptyLocation;
@@ -44,40 +51,63 @@ public class PuzzleManager : MonoBehaviour {
         }
       }
     }
+  } 
+  private void Start()
+  {
+    cameraSwitchScript = Cam.GetComponent<CameraSwitch>();
   }
+ 
 
-  // Start is called before the first frame update
-  void Start() {
+  private void StartPuzzle() {
+    cameraSwitchScript.CamSwitch();
     pieces = new List<Transform>();
     size = 3;
     CreateGamePieces(0.01f);
-  }
 
-  // Update is called once per frame
-  void Update() {
     // Check for completion.
-    if (!shuffling && CheckCompletion()) {
+    if (!shuffling) {
       shuffling = true;
       StartCoroutine(WaitShuffle(0.5f));
     }
+  }
 
-    // On click send out ray to see if we click a piece.
-    if (Input.GetMouseButtonDown(0)) {
-      RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-      if (hit) {
-        // Go through the list, the index tells us the position.
-        for (int i = 0; i < pieces.Count; i++) {
-          if (pieces[i] == hit.transform) {
-            // Check each direction to see if valid move.
-            // We break out on success so we don't carry on and swap back again.
-            if (SwapIfValid(i, -size, size)) { break; }
-            if (SwapIfValid(i, +size, size)) { break; }
-            if (SwapIfValid(i, -1, 0)) { break; }
-            if (SwapIfValid(i, +1, size - 1)) { break; }
+  // Update is called once per frame
+  private void OnTriggerEnter(Collider other)
+  {  
+    if (other.gameObject.CompareTag("Player"))
+    {
+      StartPuzzle();
+      
+    }
+
+  }
+
+  void Update()
+  {
+      // On click send out ray to see if we click a piece.
+      if (Input.GetMouseButtonDown(0)) {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (hit && (!CheckCompletion())) {
+          // Go through the list, the index tells us the position.
+          for (int i = 0; i < pieces.Count; i++) {
+            if (pieces[i] == hit.transform) {
+              // Check each direction to see if valid move.
+              // We break out on success so we don't carry on and swap back again.
+              if (SwapIfValid(i, -size, size)) { break; }
+              if (SwapIfValid(i, +size, size)) { break; }
+              if (SwapIfValid(i, -1, 0)) { break; }
+              if (SwapIfValid(i, +1, size - 1)) { break; }
+            }
           }
         }
+        else if(CheckCompletion())
+        {
+          Destroy(PuzzleBoard, 1f);
+          StartCoroutine(endPuzzle(1.2f));
+          
+        }
+          
       }
-    }
   }
 
   // colCheck is used to stop horizontal moves wrapping.
@@ -132,4 +162,19 @@ public class PuzzleManager : MonoBehaviour {
       }
     }
   }
+
+
+IEnumerator endPuzzle(float delayTime)
+{
+   //Wait for the specified delay time before continuing.
+   yield return new WaitForSeconds(delayTime);
+   cameraSwitchScript.RevertCam();
+ 
+   //Do the action after the delay time has finished.
+}
+
+ 
+
+
+
 }
