@@ -8,6 +8,7 @@ public class PuzzleManager : MonoBehaviour {
   private CameraSwitch cameraSwitchScript;
   [SerializeField] private GameObject Cam;
   [SerializeField] private GameObject PuzzleBoard;
+  public SoundManager sm;
 
 
 
@@ -102,6 +103,7 @@ public class PuzzleManager : MonoBehaviour {
         }
         else if(CheckCompletion())
         {
+          sm.PlaySolvePuzzle();
           Destroy(PuzzleBoard, 1f);
           StartCoroutine(endPuzzle(1.2f));
           
