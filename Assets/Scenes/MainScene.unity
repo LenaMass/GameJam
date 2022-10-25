@@ -13939,7 +13939,7 @@ MonoBehaviour:
           name: FINSHED
           isSystemEvent: 0
           isGlobal: 0
-        toState: 
+        toState: State 1
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
