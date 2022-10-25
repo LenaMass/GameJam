@@ -9,21 +9,53 @@ public class LetterAppears : MonoBehaviour
     [SerializeField] private Image LetterImage;
     [SerializeField] private TextMeshProUGUI LetterText;
 
+    [SerializeField] private Image HintImage;
+    [SerializeField] private TextMeshProUGUI HintText;
+
+    void Update()
+    {
+        if(HintImage.enabled)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+               HintImage.enabled = false;
+               HintText.enabled = false;
+               LetterImage.enabled = true;
+               LetterText.enabled = true;
+
+            }
+
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+ 
         if(other.CompareTag("Player"))
         {
-            LetterImage.enabled = true;
-            LetterText.enabled = true;
+            HintImage.enabled = true;
+            HintText.enabled = true;
+
+
         }
+        
+
+        
+           
+        
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            HintImage.enabled = false;
+            HintText.enabled = false;
             LetterImage.enabled = false;
             LetterText.enabled = false;
         }
     }
+
+
 }
