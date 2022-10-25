@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 	
    public AudioSource audioSource;
 
-   public AudioClip steps , solvepuzzle, opendoor, press , press2 ;
+   public AudioClip steps , solvepuzzle, opendoor, press , press2 ,Shelfmovm;
 
 
     private void Start()
@@ -37,5 +37,9 @@ public class SoundManager : MonoBehaviour
 	public void PlayPreeskey2()
 	{
 		audioSource.PlayOneShot(press2);
+	}
+	public void PlayShelfmovement()
+	{
+		audioSource.PlayOneShot(Shelfmovm);
 	}
 }

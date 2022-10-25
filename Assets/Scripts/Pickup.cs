@@ -23,11 +23,14 @@ public class Pickup : MonoBehaviour
                 if(Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward),out hit,pickupRange))
                 {
                     PickupObject(hit.transform.gameObject);
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
                 }
             }
             else
             {
                 DropObject();
+            //    Debug.Log.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinf.distance, Color.red);
+
             }
         }
         if (heldobj != null)
@@ -38,7 +41,7 @@ public class Pickup : MonoBehaviour
 
     void MoveObject()
     {
-        if(Vector3.Distance(heldobj.transform.position,holdArea.position) > 0.1f)
+        if(Vector3.Distance(heldobj.transform.position,holdArea.position) > 0.3f)
         {
             Vector3 movDirection = (holdArea.position - heldobj.transform.position);
             rb.AddForce(movDirection * pickupForce);
@@ -55,6 +58,7 @@ public class Pickup : MonoBehaviour
 
             rb.transform.parent = holdArea;
             heldobj = pickobj;
+            Debug.Log("You picked the Object");
                 
         }
     }
