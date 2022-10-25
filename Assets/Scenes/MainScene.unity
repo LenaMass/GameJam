@@ -7221,6 +7221,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3658780586656214338, guid: d91a376034a24f948a987cd8745a09e6,
+        type: 3}
+      propertyPath: InvertMouse
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3658780586656214339, guid: d91a376034a24f948a987cd8745a09e6,
         type: 3}
       propertyPath: m_Name
