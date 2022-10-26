@@ -12,20 +12,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(gameScene);
     }
-    public void back()
+    public void LoadMainMenu()
     {
-      SceneManager.LoadScene("WinScene");
+       // SceneManager.LoadScene("TitleScene");
     }
-    
-    public void Credits()
-    {
-      SceneManager.LoadScene("Credits");
-    } 
-
     // Update is called once per frame
     public void QuitGame()
     {
-       Application.Quit();
+        Application.Quit();
         
     }
   
