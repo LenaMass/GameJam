@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 	
    public AudioSource audioSource;
 
-   public AudioClip steps , solvepuzzle, opendoor, press , press2 ,Shelfmovm;
+   public AudioClip steps , solvepuzzle, opendoor, press , press2 ,Shelfmovm,stoneDoor;
 
 
     private void Start()
@@ -41,5 +41,9 @@ public class SoundManager : MonoBehaviour
 	public void PlayShelfmovement()
 	{
 		audioSource.PlayOneShot(Shelfmovm);
+	}
+	public void PlayOpenStoneDoor()
+	{
+    audioSource.PlayOneShot(stoneDoor);
 	}
 }
