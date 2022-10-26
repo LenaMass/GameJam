@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/DoorOpen.anim.meta
+guid: ab50bebc79ed5bf4c9601a2065f77a25
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+========
+guid: 4bf8bdd9e284e1c439f744e7f5d05786
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+>>>>>>>> main:Assets/Scenes/Scientist  Room/LightingData.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
