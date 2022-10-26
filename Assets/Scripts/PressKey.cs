@@ -1,45 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PressKey : MonoBehaviour
 {
-    public GameObject Text;
-    public GameObject AnimObject;
-    public GameObject Trigger;
-    public bool open = false; 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Text.SetActive(false);
-    }
+    [SerializeField] private GameObject UIelemnt;
+   // public KeyScript Key;
+    [SerializeField] private GameObject player;
 
-    void OnTriggerEnter(Collider collision)
+
+    //  [SerilizeField] private GameObject UIelemnt;
+
+    // Start is called before the first frame update
+    //  public int key = 0;
+
+    public void OnTriggerStay(Collider other)
     {
-        if (collision.transform.tag == "Player")
+        if (other.CompareTag("Player") && player.GetComponent<KeyScript>().key > 0)
         {
-            Text.SetActive(true);
-            open = true;
+           // player.GetComponent<KeyScript>().key--;
+
+            UIelemnt.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                SceneManager.LoadScene("ScientistRoom");
+            }
+
+            // Text.SetActive(true);
+            // open = true;
         }
     }
-    void OnTriggerExit(Collider collision)
-    {
-            Text.SetActive(false);
-            open = false;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (open == true)
-            {
-                Text.SetActive(false);
-                AnimObject.GetComponent<Animator>().Play("KitchenDoor");
-                Trigger.SetActive(false);
 
-                open = false;
-            }
+    // Update is called once per frame
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            UIelemnt.SetActive(false);
+
         }
     }
 }

@@ -10,7 +10,7 @@ public class Pickup : MonoBehaviour
     private Rigidbody rb; 
 
     [Header("Physics Parameters")]
-    [SerializeField] private float pickupRange = 5.0f;
+    [SerializeField] private float pickupRange = 10.0f;
     [SerializeField] private float pickupForce = 150.0f;
  
     private void Update()
@@ -53,7 +53,7 @@ public class Pickup : MonoBehaviour
         {
             rb = pickobj.GetComponent<Rigidbody>();
             rb.useGravity = false;
-            rb.drag = 10;
+            rb.drag = 15;
             rb.constraints = RigidbodyConstraints.FreezeRotation;
 
             rb.transform.parent = holdArea;
