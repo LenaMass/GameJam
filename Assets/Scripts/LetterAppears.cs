@@ -14,7 +14,7 @@ public class LetterAppears : MonoBehaviour
 
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject theDoor;
-    //public SoundManager sm;
+    public SoundManager sm;
 
     
 
@@ -33,7 +33,7 @@ public class LetterAppears : MonoBehaviour
                HintText.enabled = false;
                LetterImage.enabled = true;
                LetterText.enabled = true;
-               //sm.PlayOpenStoneDoor();
+               sm.PlayOpenStoneDoor();
                anim.Play("DoorOpen");
 
             }

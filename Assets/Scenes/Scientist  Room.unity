@@ -2721,6 +2721,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Wooden_Round_Left (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2642311626253688300, guid: ba93fc15ee14dbf45b36696cb946115f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba93fc15ee14dbf45b36696cb946115f, type: 3}
 --- !u!4 &145369739 stripped
@@ -18505,9 +18510,9 @@ MonoBehaviour:
   LetterText: {fileID: 298648555}
   HintImage: {fileID: 24168568}
   HintText: {fileID: 1873899562}
-  Anim: {fileID: 0}
-  theDoor: {fileID: 0}
-  sm: {fileID: 0}
+  anim: {fileID: 145369741}
+  theDoor: {fileID: 145369740}
+  sm: {fileID: 961577729}
 --- !u!65 &896201441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20199,7 +20204,7 @@ MonoBehaviour:
   press: {fileID: 8300000, guid: d073cd64419d6354ca414df4197c5bdf, type: 3}
   press2: {fileID: 8300000, guid: d073cd64419d6354ca414df4197c5bdf, type: 3}
   Shelfmovm: {fileID: 8300000, guid: 5535e0adeabcb8e4d86411196ec12316, type: 3}
-  stoneDoor: {fileID: 0}
+  stoneDoor: {fileID: 8300000, guid: 9b37a37c3581df146b0f0b6a318a4d17, type: 3}
 --- !u!4 &961577730
 Transform:
   m_ObjectHideFlags: 0
