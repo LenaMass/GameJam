@@ -12,6 +12,17 @@ public class LetterAppears : MonoBehaviour
     [SerializeField] private Image HintImage;
     [SerializeField] private TextMeshProUGUI HintText;
 
+    [SerializeField] private Animator anim;
+    [SerializeField] private GameObject theDoor;
+    //public SoundManager sm;
+
+    
+
+    void Start()
+    {
+        anim = theDoor.GetComponent<Animator>();
+    }
+
     void Update()
     {
         if(HintImage.enabled)
@@ -22,10 +33,16 @@ public class LetterAppears : MonoBehaviour
                HintText.enabled = false;
                LetterImage.enabled = true;
                LetterText.enabled = true;
+               //sm.PlayOpenStoneDoor();
+               anim.Play("DoorOpen");
 
             }
+            
+            
 
+          
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,8 +71,12 @@ public class LetterAppears : MonoBehaviour
             HintText.enabled = false;
             LetterImage.enabled = false;
             LetterText.enabled = false;
+
+            
         }
     }
+
+    
 
 
 }
