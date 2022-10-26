@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class LetterAppears : MonoBehaviour
 {
     [SerializeField] private Image LetterImage;
-    [SerializeField] private TextMeshProUGUI LetterText;
+    [SerializeField] private Text LetterText;
 
     [SerializeField] private Image HintImage;
-    [SerializeField] private TextMeshProUGUI HintText;
+    [SerializeField] private Text HintText;
 
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject theDoor;
