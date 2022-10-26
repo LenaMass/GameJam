@@ -16,6 +16,8 @@ public class BlueLight : MonoBehaviour
     {
         if (other.CompareTag("blue"))
         {
+            OpenTreasuredoor.counter++;
+
             Room.GetComponent<Light>().enabled = true;
         }
     }
@@ -26,5 +28,6 @@ public class BlueLight : MonoBehaviour
             Room.GetComponent<Light>().enabled = false;
         }
     }
+   
 }
 

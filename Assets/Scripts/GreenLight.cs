@@ -5,7 +5,7 @@ using UnityEngine;
 public class GreenLight : MonoBehaviour
 {
     [SerializeField] private GameObject Room;
-
+   // public static int _triggerCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,8 @@ public class GreenLight : MonoBehaviour
     {
         if (other.CompareTag("Green"))
         {
+            OpenTreasuredoor.counter++;
+           // Debug.Log("Light Trigger Counter :"+_triggerCounter);
             Room.GetComponent<Light>().enabled = true;
         }
     }

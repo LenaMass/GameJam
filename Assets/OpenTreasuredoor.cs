@@ -4,20 +4,56 @@ using UnityEngine;
 
 public class OpenTreasuredoor : MonoBehaviour
 {
-    YellowLight yelow;
-    ggh gggg;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static int counter = 0;
 
-    // Update is called once per frame
+    [SerializeField] private GameObject blueRoom;
+
+    [SerializeField] private GameObject RedRoom;
+
+    [SerializeField] private GameObject GreenRoom;
+
+    [SerializeField] private GameObject YellowRoom;
+
+   /* void OnTriggerStay(Collider other)
+    {
+       /* if (this.CompareTag("blue"))
+        {
+            if (blueRoom.activeSelf==true)
+            {
+                counter++;
+            }
+        }
+        if (this.CompareTag("Red"))
+        {
+            if (RedRoom.activeSelf==true)
+            {
+                counter++;
+            }
+        }
+        if (this.CompareTag("Green"))
+        {
+            if (GreenRoom.activeSelf==true)
+            {
+                counter++;
+            }
+        }
+
+        if (this.CompareTag("yellow"))
+        {
+            if (YellowRoom.activeSelf== true)
+            {
+                counter++;
+            }
+        } 
+    } */
     void Update()
     {
-        if (ggggggggggggggggg)
+        if (counter >= 4)
         {
-            Anim.gggg = .play();
+            Debug.Log("gg");
         }
     }
+     
+
 }
+

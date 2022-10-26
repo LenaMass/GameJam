@@ -14,7 +14,10 @@ public class YellowLight : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        EnableyellowLight();
+        if (this.CompareTag("yellow"))
+        {
+            Room.GetComponent<Light>().enabled = true;
+        }
     }
     public void OnTriggerExit(Collider other)
     {
@@ -23,13 +26,6 @@ public class YellowLight : MonoBehaviour
             Room.GetComponent<Light>().enabled = false;
         }
 
-    }
-    public void EnableyellowLight()
-    {
-        if (this.CompareTag("yellow"))
-        {
-            Room.GetComponent<Light>().enabled = true;
-        }
     }
 }
 

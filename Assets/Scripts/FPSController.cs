@@ -16,7 +16,9 @@ public class FPSController : MonoBehaviour
     //movement
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float runSpeed = 15f;
-    
+    [SerializeField] private float gravity =5;
+
+
     //local GameObjects
     private CharacterController charController;
     private Camera mainCamera;
@@ -66,9 +68,9 @@ public class FPSController : MonoBehaviour
         movement *= currentSpeed;
         movement.y = yVelocity;
 
-       
-        
-       
+
+        movement.y -= gravity;
+
         //apply movement to the player
         charController.Move(movement * Time.deltaTime);
 
