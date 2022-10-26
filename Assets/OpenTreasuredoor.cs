@@ -6,13 +6,14 @@ public class OpenTreasuredoor : MonoBehaviour
 {
     public static int counter = 0;
 
-    [SerializeField] private GameObject blueRoom;
+     private GameObject blueRoom;
 
-    [SerializeField] private GameObject RedRoom;
+    private GameObject RedRoom;
 
-    [SerializeField] private GameObject GreenRoom;
+     private GameObject GreenRoom;
 
-    [SerializeField] private GameObject YellowRoom;
+     private GameObject YellowRoom;
+      public GameObject CamScene;
 
    /* void OnTriggerStay(Collider other)
     {
@@ -50,7 +51,8 @@ public class OpenTreasuredoor : MonoBehaviour
     {
         if (counter >= 4)
         {
-            Debug.Log("gg");
+          CamScene.SetActive(true);
+            Debug.Log("gggg");
         }
     }
      
