@@ -16,7 +16,11 @@ public class DoorOpen : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
+<<<<<<< Updated upstream
             anim.Play("DoorOpen");
+=======
+            anim.SetTrigger("IsOpen");
+>>>>>>> Stashed changes
 
         }
         

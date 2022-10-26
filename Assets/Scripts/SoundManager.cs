@@ -8,7 +8,11 @@ public class SoundManager : MonoBehaviour
 	
    public AudioSource audioSource;
 
+<<<<<<< Updated upstream
    public AudioClip steps , solvepuzzle, opendoor, press , press2 ,Shelfmovm, stoneDoor;
+=======
+   public AudioClip steps , solvepuzzle, opendoor, press , press2 ,Shelfmovm,stoneDoor;
+>>>>>>> Stashed changes
 
 
     private void Start()
@@ -42,7 +46,10 @@ public class SoundManager : MonoBehaviour
 	{
 		audioSource.PlayOneShot(Shelfmovm);
 	}
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	public void PlayOpenStoneDoor()
 	{
     audioSource.PlayOneShot(stoneDoor);

@@ -42,7 +42,7 @@ public class LetterAppears : MonoBehaviour
 
           
         }
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
