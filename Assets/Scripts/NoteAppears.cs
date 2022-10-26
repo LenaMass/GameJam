@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class NoteAppears : MonoBehaviour
 {
     [SerializeField] private Image NoteImage;
-    [SerializeField] private TextMeshProUGUI NoteText;
+    [SerializeField] private Text NoteText;
 
     [SerializeField] private Image HintImage;
-    [SerializeField] private TextMeshProUGUI HintText;
+    [SerializeField] private Text HintText;
 
 
     
