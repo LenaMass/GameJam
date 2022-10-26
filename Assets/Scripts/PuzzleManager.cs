@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PuzzleManager : MonoBehaviour {
   [SerializeField] private Transform gameTransform;
@@ -9,6 +11,9 @@ public class PuzzleManager : MonoBehaviour {
   [SerializeField] private GameObject Cam;
   [SerializeField] private GameObject PuzzleBoard;
   public SoundManager sm;
+
+  [SerializeField] private Image HintImage;
+  [SerializeField] private TextMeshProUGUI HintText;
 
 
 
@@ -77,14 +82,41 @@ public class PuzzleManager : MonoBehaviour {
   {  
     if (other.gameObject.CompareTag("Player"))
     {
-      StartPuzzle();
+      HintImage.enabled = true;
+      HintText.enabled = true;
       
+      //StartPuzzle();
     }
 
   }
 
+  private void OnTriggerExit(Collider other)
+  {
+      if(other.CompareTag("Player"))
+      {
+        HintImage.enabled = false;
+        HintText.enabled = false;
+            
+      }
+  }
+
   void Update()
   {
+
+
+    if(HintImage.enabled)
+      {
+        if(Input.GetKeyDown(KeyCode.E))
+          {
+            HintImage.enabled = false;
+            HintText.enabled = false;
+            StartPuzzle();
+
+          }
+          
+          
+      }
+
       // On click send out ray to see if we click a piece.
       if (Input.GetMouseButtonDown(0)) {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
